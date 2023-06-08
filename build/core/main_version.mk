@@ -18,11 +18,11 @@ ADDITIONAL_SYSTEM_PROPERTIES += \
 
 # Alpha properties
 ADDITIONAL_SYSTEM_PROPERTIES += \
-    ro.alpha.build.version=$(LINEAGE_VERSION) \
-    ro.alpha.display.version=$(LINEAGE_DISPLAY_VERSION) \
-    ro.alpha.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
-    ro.alpha.modversion=$(ALPHA_VERSION) \
-    ro.alpha.build.package=$(ALPHA_BUILD_PACKAGE) \
-    ro.alpha.maintainer=$(ALPHA_MAINTAINER) \
-    ro.alpha.release.type=$(ALPHA_BUILD_TYPE) \
-    ro.modversion=$(ALPHA_VERSION)
+    ro.beta.build.version=$(LINEAGE_VERSION) \
+    ro.beta.display.version=$(LINEAGE_DISPLAY_VERSION) \
+    ro.beta.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
+    ro.beta.modversion=$(BETA_VERSION) \
+    ro.beta.build.package=$(BETA_BUILD_PACKAGE) \
+    ro.beta.maintainer=$(BETA_MAINTAINER) \
+    ro.beta.release.type=$(BETA_BUILD_TYPE) \
+    ro.modversion=$(BETA_VERSION)

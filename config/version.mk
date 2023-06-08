@@ -1,14 +1,14 @@
 PRODUCT_VERSION_MAJOR = 13
 PRODUCT_VERSION_MINOR = 0
 
-ALPHA_VERSION := 1.5.1
-ALPHA_VARIANT := Droid
+BETA_VERSION := 1.5.1
+BETA_VARIANT := Droid
 
 
-ALPHA_BUILD_TYPE ?= UNOFFICIAL
+BETA_BUILD_TYPE ?= UNOFFICIAL
 
 # Only include Updater for official builds
-ifeq ($(filter-out OFFICIAL Official official,$(ALPHA_BUILD_TYPE)),)
+ifeq ($(filter-out OFFICIAL Official official,$(BETA_BUILD_TYPE)),)
 PRODUCT_PACKAGES += \
     AlphaUpdater
 
@@ -27,7 +27,7 @@ GAPPS_BUILD_TYPE := $(strip $(WITH_GAPPS))
 endif
 
 # default to vanilla
-ALPHA_BUILD_PACKAGE := vanilla
+BETA_BUILD_PACKAGE := vanilla
 
 ifeq ($(strip $(GAPPS_BUILD_TYPE)),0)
 # Build GmsCompat and GrapheneApps on vanilla builds
@@ -37,10 +37,10 @@ PRODUCT_PACKAGES += \
     GrapheneApps
 else
 ifeq ($(strip $(GAPPS_BUILD_TYPE)),1)
-ALPHA_BUILD_PACKAGE := core_gapps
+BETA_BUILD_PACKAGE := core_gapps
 else
 ifeq ($(strip $(GAPPS_BUILD_TYPE)),2)
-ALPHA_BUILD_PACKAGE := full_gapps
+BETA_BUILD_PACKAGE := full_gapps
 # conditionally include pixel-framework
 ifneq ($(strip $(TARGET_INCLUDE_PIXEL_FRAMEWORK)),false)
 $(call inherit-product-if-exists, vendor/pixel-framework/config.mk)
@@ -52,7 +52,7 @@ endif
 $(call inherit-product, vendor/gms/setup.mk)
 
 # Internal version
-LINEAGE_VERSION := Alpha$(ALPHA_VARIANT)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date +%Y%m%d)-$(LINEAGE_BUILD)-$(ALPHA_BUILD_PACKAGE)-v$(ALPHA_VERSION)
+LINEAGE_VERSION := Alpha$(BETA_VARIANT)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date +%Y%m%d)-$(LINEAGE_BUILD)-$(BETA_BUILD_PACKAGE)-v$(BETA_VERSION)
 
 # Display version
-LINEAGE_DISPLAY_VERSION := Alpha$(ALPHA_VARIANT)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(LINEAGE_BUILD)-$(ALPHA_BUILD_PACKAGE)-v$(ALPHA_VERSION)
+LINEAGE_DISPLAY_VERSION := Alpha$(BETA_VARIANT)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(LINEAGE_BUILD)-$(BETA_BUILD_PACKAGE)-v$(BETA_VERSION)
