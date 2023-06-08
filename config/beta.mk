@@ -1,4 +1,4 @@
-PRODUCT_BRAND ?= Alpha
+PRODUCT_BRAND ?= Beta
 
 # Packages
 PRODUCT_PACKAGES += \

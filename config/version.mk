@@ -1,7 +1,7 @@
 PRODUCT_VERSION_MAJOR = 13
 PRODUCT_VERSION_MINOR = 0
 
-BETA_VERSION := 1.5.1
+BETA_VERSION := 0.1
 BETA_VARIANT := Droid
 
 
@@ -9,8 +9,8 @@ BETA_BUILD_TYPE ?= UNOFFICIAL
 
 # Only include Updater for official builds
 ifeq ($(filter-out OFFICIAL Official official,$(BETA_BUILD_TYPE)),)
-PRODUCT_PACKAGES += \
-    AlphaUpdater
+#PRODUCT_PACKAGES += \
+#    AlphaUpdater
 
 PRODUCT_COPY_FILES += \
     vendor/lineage/prebuilt/common/etc/init/init.lineage-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.lineage-updater.rc
@@ -52,7 +52,7 @@ endif
 $(call inherit-product, vendor/gms/setup.mk)
 
 # Internal version
-LINEAGE_VERSION := Alpha$(BETA_VARIANT)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date +%Y%m%d)-$(LINEAGE_BUILD)-$(BETA_BUILD_PACKAGE)-v$(BETA_VERSION)
+LINEAGE_VERSION := Beta$(BETA_VARIANT)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date +%Y%m%d)-$(LINEAGE_BUILD)-$(BETA_BUILD_PACKAGE)-v$(BETA_VERSION)
 
 # Display version
-LINEAGE_DISPLAY_VERSION := Alpha$(BETA_VARIANT)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(LINEAGE_BUILD)-$(BETA_BUILD_PACKAGE)-v$(BETA_VERSION)
+LINEAGE_DISPLAY_VERSION := Beta$(BETA_VARIANT)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(LINEAGE_BUILD)-$(BETA_BUILD_PACKAGE)-v$(BETA_VERSION)
