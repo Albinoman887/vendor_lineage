@@ -16,6 +16,7 @@
 #
 
 Changelog=Changelog.txt
+LINEAGE_TARGET_CHANGELOG=$PRODUCT_OUT/$LINEAGE_VERSION-changelog.txt
 
 DEVICE=$1
 
@@ -63,4 +64,5 @@ done
 sed -i 's/project/   */g' $Changelog
 
 cp $Changelog $OUT_DIR/target/product/$DEVICE/system/etc/
+cp $Changelog $OUT_DIR/target/product/$DEVICE/$LINEAGE_VERSION-changelog.txt
 mv $Changelog $OUT_DIR/target/product/$DEVICE/
