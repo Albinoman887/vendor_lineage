@@ -44,6 +44,10 @@ BETA_BUILD_PACKAGE := full_gapps
 # conditionally include pixel-framework
 ifneq ($(strip $(TARGET_INCLUDE_PIXEL_FRAMEWORK)),false)
 $(call inherit-product-if-exists, vendor/pixel-framework/config.mk)
+# Dexpreopt
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    SettingsGoogle \
+    SystemUIGoogle
 endif
 endif
 endif
