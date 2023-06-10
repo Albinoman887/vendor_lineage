@@ -63,6 +63,6 @@ done
 
 sed -i 's/project/   */g' $Changelog
 
-cp $Changelog $OUT_DIR/target/product/$DEVICE/system/etc/
-cp $Changelog $OUT_DIR/target/product/$DEVICE/$LINEAGE_VERSION-changelog.txt
-mv $Changelog $OUT_DIR/target/product/$DEVICE/
+cp $Changelog $ANDROID_PRODUCT_OUT/system/etc/
+cp $Changelog $ANDROID_PRODUCT_OUT/$LINEAGE_VERSION-changelog.txt
+mv $Changelog $ANDROID_PRODUCT_OUT/
