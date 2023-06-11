@@ -39,7 +39,7 @@ if [ -f $existingOTAjson ]; then
 	md5=`md5sum "$2/$3" | cut -d' ' -f1`
 	sha256=`sha256sum "$2/$3" | cut -d' ' -f1`
 	size=`stat -c "%s" "$2/$3"`
-	linenr=`grep -m 1 -n "ro.beta.build.package" $buildprop | cut -d':' -f1`
+	linenr=`grep -m 1 -n "ro.sigma.build.package" $buildprop | cut -d':' -f1`
 	buildtype=`sed -n $linenr'p' < $buildprop | cut -d'=' -f2`
 	forum=`grep -m 1 -n "\"forum\"" $existingOTAjson | cut -d ":" -f 4 | sed 's/"//g' | sed 's/,//g' | xargs`
 	if [ ! -z "$forum" ]; then
@@ -93,7 +93,7 @@ if [ -f $existingOTAjson ]; then
 			"oem": "'$oem'",
 			"device": "'$device'",
 			"filename": "'$filename'",
-			"download": "https://sourceforge.net/projects/BetaDroid-project/files/'$1'/'$3'/download",
+			"download": "https://sourceforge.net/projects/SigmaDroid-project/files/'$1'/'$3'/download",
 			"timestamp": '$timestamp',
 			"md5": "'$md5'",
 			"sha256": "'$sha256'",
@@ -130,7 +130,7 @@ else
 			"oem": "''",
 			"device": "''",
 			"filename": "'$filename'",
-			"download": "https://sourceforge.net/projects/BetaDroid-project/files/'$1'/'$3'/download",
+			"download": "https://sourceforge.net/projects/SigmaDroid-project/files/'$1'/'$3'/download",
 			"timestamp": '$timestamp',
 			"md5": "'$md5'",
 			"sha256": "'$sha256'",
@@ -153,7 +153,7 @@ else
 }' >> $output
 
 	echo 'There is no official support for this device yet'
-	echo 'Consider adding official support by reading the documentation at https://github.com/BetaDroid-devices/OTA/blob/13.0/README.md'
+	echo 'Consider adding official support by reading the documentation at https://github.com/SigmaDroid-devices/OTA/blob/13.0/README.md'
 fi
 
 echo ""

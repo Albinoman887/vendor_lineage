@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # -----------------------------------------------------------------
-# BetaDroid OTA update package
+# SigmaDroid OTA update package
 
 LINEAGE_TARGET_UPDATEPACKAGE := $(PRODUCT_OUT)/$(LINEAGE_VERSION)-fastboot.zip
 ECHO_BLUE := \e[34m
@@ -27,7 +27,7 @@ updatepackage: $(INTERNAL_UPDATE_PACKAGE_TARGET)
 #	$(hide) ./vendor/lineage/build/tools/createjson.sh $(TARGET_DEVICE) $(PRODUCT_OUT) $(LINEAGE_VERSION)-fastboot.zip
 	@echo "Generating changelog..."
 	$(hide) ./vendor/lineage/build/tools/changelog.sh $(LINEAGE_BUILD)
-	$(hide) cp -r (PRODUCT_OUT)/Changelog.txt $(PRODUCT_OUT)/$(LINEAGE_VERSION)-changelog.txt
+#	$(hide) cp -r $OUT/Changelog.txt $OUT/$(LINEAGE_VERSION)-changelog.txt
 	$(hide) ./vendor/lineage/build/tasks/betadroid_ascii.sh
 	@echo -e "$(ECHO_GREEN)==============================================================${ECHO_ENDCOLOR}"
 	@echo -e " ${ECHO_BLUE}update package is:${ECHO_ENDCOLOR} $(LINEAGE_VERSION)-fastboot.zip"

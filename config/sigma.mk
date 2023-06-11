@@ -1,4 +1,4 @@
-PRODUCT_BRAND ?= Beta
+PRODUCT_BRAND ?= Sigma
 
 # Packages
 PRODUCT_PACKAGES += \
