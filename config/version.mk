@@ -48,9 +48,9 @@ else
 ifeq ($(strip $(GAPPS_BUILD_TYPE)),2)
 ALPHA_BUILD_PACKAGE := full_gapps
 # conditionally include pixel-framework
-#ifneq ($(strip $(TARGET_INCLUDE_PIXEL_FRAMEWORK)),false)
-#$(call inherit-product-if-exists, vendor/pixel-framework/config.mk)
-#endif
+ifneq ($(strip $(TARGET_INCLUDE_PIXEL_FRAMEWORK)),false)
+$(call inherit-product-if-exists, vendor/pixel-framework/config.mk)
+endif
 endif
 endif
 endif
